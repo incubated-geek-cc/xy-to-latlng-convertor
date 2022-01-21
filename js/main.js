@@ -50,6 +50,7 @@ transformProj.addEventListener('click', () => {
 
 var outputJSONObj=[];
 
+var uploadCSVFileBtn = document.getElementById('uploadCSVFileBtn');
 var uploadCSVFile = document.getElementById('uploadCSVFile');
 var saveTransformedProj = document.getElementById('saveTransformedProj');
 var outputPreviewTable = document.getElementById('outputPreviewTable');
@@ -69,7 +70,11 @@ function sanitiseObj(obj) {
   }
   return tempObj;
 }
-uploadCSVFile.onchange = function(e) {
+
+uploadCSVFileBtn.addEventListener('click', ()=> {
+    uploadCSVFile.click();
+});
+uploadCSVFile.addEventListener('change', (e)=> {
     saveTransformedProj.disabled=true;
 
     if (!window.FileReader) {
@@ -161,4 +166,4 @@ uploadCSVFile.onchange = function(e) {
         };
         fileredr.readAsText(fileis);
     }
-};
+});
