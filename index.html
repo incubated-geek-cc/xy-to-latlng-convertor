@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Transform XY to LatLng">
+    <meta name="keywords" content="Map,Geography,Geospatial,Projection">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />  
+    <meta http-equiv="Content-Language" content="en" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+    <title>[X,Y] to [Lat,Lng] Convertor</title>
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+    <h3>🔢 Custom Input</h3>
+    <dl>
+        <dt>
+            <h4><p>Select Input <abbr title='Coordinate Reference System'>CRS</abbr>&nbsp;ᴇᴘsɢ:<select id='xyProj4List0' class='minimal'></select></p></h4>
+            <p><strong style='font-family:cambria;border-radius:5px;padding:2px;border:1px solid #000'>ʸ∟ₓ</strong> <u>Input XY Values</u></p>
+            <strong>X</strong>&nbsp;<input id='xVal' type='number' value='38221.856115700' />
+            <strong>Y</strong>&nbsp;<input id='yVal' type='number' value='33025.293366093' />
+            <button id='transformProj' class='btn btn-outline-dark'>Transform to 🌐 Lat/Lng »</button>
+        </dt>
+        <dd>
+            <div id='output'></div>
+        </dd>
+        <p class='info'>ℹ Output values are rendered in <em>EPSG:4326/WGS84</em> spatial projection by default.</p>
+    </dl>
+    <h3>📤 File Upload</h3>
+    <dl>
+        <dt>
+            <div><u>Specify Field Names for XY in CSV File</u></div>
+            <strong>X</strong>&nbsp;<input id='xFieldName' type='text' value='X_ADDR' />
+            <strong>Y</strong>&nbsp;<input id='yFieldName' type='text' value='Y_ADDR' />
+            <p>📄 <u>Upload a CSV File</u></p>
+            <strong>📂 Select File</strong>&nbsp;<input id='uploadCSVFile' type='file' />
+            <button id='saveTransformedProj' class='btn btn-outline-dark' disabled>💾 Save to file</button>
+            <hr>
+            <div id='outputPreviewTable' class="table-responsive"></div>
+        </dt>
+    </dl>
+    
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script src='js/proj4.js'></script>
+    <script src='js/proj4_list.js'></script>
+    <script src='js/json2csv.js'></script>
+    <script src='js/main.js'></script>
+</body>
+</html>
