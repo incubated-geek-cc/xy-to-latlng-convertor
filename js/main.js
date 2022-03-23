@@ -86,14 +86,23 @@ uploadCSVFile.addEventListener('change', (e)=> {
             var csvStr = fle.target.result;
 
             converter.csv2jsonAsync(csvStr).then((jsonDataOutput) => {
-                console.log(jsonDataOutput);
                 for(var r in jsonDataOutput) {
                     var dataRecord=jsonDataOutput[r];
                     dataRecord=sanitiseObj(dataRecord);
 
-                    var x=parseFloat(dataRecord[yFieldName.value]);
-                    var y=parseFloat(dataRecord[xFieldName.value]);
+                    var x=parseFloat(dataRecord[xFieldName.value]);
+                    var y=parseFloat(dataRecord[yFieldName.value]);
+                    // fromProj = proj4.defs(crsNotation);
+                    // toProf = proj4.defs('EPSG:4326');
+
                     var latLngArr=proj4(fromProj, toProf, [x, y]);
+
+                    // console.log('fromProj',fromProj);
+                    // console.log('toProf',toProf);
+                    // console.log(dataRecord);
+                    // console.log([x, y]);
+                    // console.log(latLngArr);
+
                     var lat=latLngArr[1];
                     var lng=latLngArr[0];
 
