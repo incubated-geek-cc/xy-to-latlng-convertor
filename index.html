@@ -15,21 +15,30 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="MobileOptimized" content="320" />  
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-    <title>[X,Y] to [Lat,Lng] Convertor</title>
+    <title>[X,Y] to [Lng,Lat] Convertor</title>
     <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
-    <h3>🔢 Custom Input</h3>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <h3>🔢 Specify Input/Output <abbr title='Coordinate Reference System'>CRS</abbr></h3>
     <dl>
         <dt>
             <h4><p>Select Input <abbr title='Coordinate Reference System'>CRS</abbr>&nbsp;<span style='font-family:cambria'>🌐ᵉᵖˢᵍ&nbsp;</span><select id='xyProj4List0' class='minimal'></select></p></h4>
-            <p><strong style='font-family:cambria;border-radius:2px;padding:2px;border:1px solid #000'>ʸ∟ₓ</strong>&nbsp;&nbsp;<strong>X:</strong>&nbsp;<input id='xVal' type='number' value='38221.856115700' />&nbsp;<strong>Y:</strong>&nbsp;<input id='yVal' type='number' value='33025.293366093' />&nbsp;<button id='transformProj' class='btn btn-outline-dark'>Convert to <strong>∢</strong>&nbsp;Lat/Lng »</button></p>
+
+            <h4><p>Select Output <abbr title='Coordinate Reference System'>CRS</abbr>&nbsp;<span style='font-family:cambria'>🌐ᵉᵖˢᵍ&nbsp;</span><select id='xyProj4List1' class='minimal'></select></p></h4>
+        </dt>
+    </dl> 
+    <hr>   
+    <h3>🔢 Custom Inputs</h3>
+    <dl>
+        <dt>
+            <p><strong style='font-family:Segoe UI Symbol;border-radius:2px;padding:2px 4px;border:1px solid #000'>⌱</strong>&nbsp;&nbsp;<strong>X:</strong>&nbsp;<input id='xVal' type='number' value='38221.856115700' />&nbsp;<strong>Y:</strong>&nbsp;<input id='yVal' type='number' value='33025.293366093' />&nbsp;<button id='transformProj' class='btn btn-outline-dark'>Convert to <strong>∢</strong>&nbsp;Lng/Lat»</button></p>
         </dt>
         <dd>
-            <div id='output'></div>
+            <div id='output'>⋯</div>
         </dd>
-        <p class='info'>ℹ Output values are rendered in <em>EPSG:4326/WGS84</em> spatial projection by default.</p>
     </dl>
+    <hr>
     <h3>📤 Upload CSV File</h3>
     <dl>
         <dt>
@@ -42,7 +51,6 @@
         </dt>
     </dl>
     
-    <noscript>You need to enable JavaScript to run this app.</noscript>
     <script src='js/proj4.js'></script>
     <script src='js/proj4_list.js'></script>
     <script src='js/json2csv.js'></script>

@@ -1,4 +1,4 @@
- html, body {
+html, body {
     padding:0;
     margin:0;
     height: calc(100vh - 25px);
@@ -170,10 +170,14 @@ hr {
   overflow: visible;
 }
 hr {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: .25rem;
+  margin-bottom: .25rem;
   border: 0;
-  border-top: 1px solid rgba(0,0,0,.1);
+  border-top: 1px solid rgba(0,0,0,.35);
+}
+dl,p,h3,h4 {
+    margin-block-start: 0.275em;
+    margin-block-end: 0.275em;
 }
 #xVal,#yVal,#xFieldName,#yFieldName {
   -webkit-appearance: none;
